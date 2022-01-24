@@ -1,0 +1,18 @@
+body {
+  margin: 0;
+}
+
+main {
+  background-color: grey;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#infos_DB {
+  width: 50%;
+  height: 50vh;
+  text-align: center;
+}/*# sourceMappingURL=style.css.map */
