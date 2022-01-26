@@ -3,7 +3,7 @@ body {
 }
 
 main {
-  background-color: grey;
+  background-color: burlywood;
   width: 100vw;
   height: 100vh;
   display: flex;
@@ -11,8 +11,17 @@ main {
   align-items: center;
 }
 
-#infos_DB {
+#db_infos {
+  background-color: beige;
   width: 50%;
-  height: 50vh;
+  height: 60vh;
   text-align: center;
+}
+
+table {
+  width: 80%;
+  margin: auto;
+}
+table td {
+  width: 30%;
 }/*# sourceMappingURL=style.css.map */
