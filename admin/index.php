@@ -50,8 +50,20 @@
                     <tbody>
                       <?php
                         require 'database.php';
+                        
                         $db = Database::connect();
-                        $statement = $db->query('SELECT films.ID, films.titre, films.realisateur, films.annee, realisateurs.prenom AS prenom, realisateurs.nom AS nom, realisateurs.age AS age FROM films LEFT JOIN realisateurs ON films.realisateur = realisateurs.ID ORDER BY films.titre DESC');
+                        $statement = $db->query('SELECT
+                        films.ID,
+                        films.titre,
+                        films.realisateur,
+                        films.annee,
+                        realisateurs.prenom AS prenom,
+                        realisateurs.nom AS nom,
+                        realisateurs.age AS age
+                        FROM films LEFT JOIN realisateurs
+                        ON films.realisateur = realisateurs.ID
+                        ORDER BY films.titre DESC');
+
                         while($item = $statement->fetch()) {
                             echo '<tr>';
                             echo '<td>'. $item['titre'] . '</td>';
