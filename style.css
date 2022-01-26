@@ -24,4 +24,14 @@ table {
 }
 table td {
   width: 30%;
+}
+
+main#admin {
+  flex-direction: column;
+}
+
+.admin {
+  background-color: #fff;
+  padding: 50px;
+  border-radius: 10px;
 }/*# sourceMappingURL=style.css.map */

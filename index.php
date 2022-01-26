@@ -13,21 +13,6 @@
   <link rel="stylesheet" href="style.css">
 </head>
 
-<!-- connexion BDD -->
-<?php
-try {
-  $database = new PDO('mysql:host=localhost;dbname=test_julien_v2', 'root', '');
-  $database->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-}
-
-catch(Exception $e)
-{
-  die('ERROR : ' . $e->getMessage());
-}
-?>
-<!-- fin connexion BDD -->
-
-
 <body>
   <main>
     <div id="db_infos">
