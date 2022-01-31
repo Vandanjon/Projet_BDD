@@ -22,24 +22,24 @@ if(isset($_POST['username']) && isset($_POST['password']))
         $exec_requete = mysqli_query($db,$requete);
         $reponse      = mysqli_fetch_array($exec_requete);
         $count = $reponse['count(*)'];
-        if($count!=0) // nom d'utilisateur et mot de passe correctes
+        if($count!=0) // nom d'utilisateur et mot de passe corrects
         {
            $_SESSION['username'] = $username;
-           header('Location: admin/admin.php');
+           header('location: admin.php');
         }
         else
         {
-           header('Location: login.php?erreur=1'); // utilisateur ou mot de passe incorrect
+           header('location: ../index.php?erreur=1'); // utilisateur ou mot de passe incorrect
         }
     }
     else
     {
-       header('Location: login.php?erreur=2'); // utilisateur ou mot de passe vide
+       header('location: ../index.php?erreur=2'); // utilisateur ou mot de passe vide
     }
 }
 else
 {
-   header('Location: login.php');
+   header('location: index.php');
 }
 mysqli_close($db); // fermer la connexion
 ?>

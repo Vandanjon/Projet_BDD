@@ -9,7 +9,7 @@
      if($_GET['deconnexion']==true)
      {  
         session_unset();
-        header("location:../login.php");
+        header("location:../index.php");
      }
   }
   else if($_SESSION['username'] !== ""){
@@ -25,7 +25,7 @@
 
 <head>
     <title>Administration de la BDD</title>
-    <?php require_once("../includes/header.php"); ?>
+    <?php require_once("header.php"); ?>
 
 </head>
 
