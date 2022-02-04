@@ -1,6 +1,22 @@
+// Start Base reset //
+
 body {
     margin: 0;
 }
+
+// End Base reset
+
+
+// COLORS //
+
+// End COLORS
+
+// FONTS //
+
+// End FONTS
+
+
+// Start INDEX.php //
 
 main {
     background-color: burlywood;
@@ -27,8 +43,10 @@ table {
     }
 }
 
+// End INDEX.php
 
-// ADMIN
+
+// Start ADMIN.php //
 
 main#admin {
     flex-direction: column;
@@ -39,3 +57,9 @@ main#admin {
     padding: 50px;
     border-radius: 10px;
 }
+
+// End ADMIN.php
+
+// Start VIEW.php //
+
+// End VIEW.php

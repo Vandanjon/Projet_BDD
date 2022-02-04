@@ -2,7 +2,7 @@
 <html lang="fr">
 
 <head>
-  <title>Accueil du site</title>
+  <title>Reporting Tool V</title>
   <?php require_once("php/header.php"); ?>
 </head>
 
