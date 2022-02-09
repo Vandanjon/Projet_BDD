@@ -4,10 +4,13 @@
 
 class Database
 {
-    private static $db_host = 'localhost';        // modifier en fonction des besoins
-    private static $db_name = 'test_julien_v2';   // modifier en fonction des besoins
-    private static $db_user = 'root';             // modifier en fonction des besoins
-    private static $db_user_password = '';        // modifier en fonction des besoins
+
+    // modifier en fonction des besoins
+    private static $db_host = 'localhost';
+    private static $db_name = 'test_julien_v2';
+    private static $db_user = 'root';
+    private static $db_user_password = '';
+    // fin des modifs
     
     private static $connection = null;
 
