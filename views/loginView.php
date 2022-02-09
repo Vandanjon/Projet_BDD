@@ -12,16 +12,10 @@
             <label>password</label>
             <input type="password" placeholder="1234" name="password" required>
 
-            <input type="submit" id='submit' value='log in'>
+            <input type="submit" id="submit" value="log in">
         </form>
         <!-- END LOGIN -->
 
-    </main>
-</body>
-
-</html>
-
-
 <?php $content = ob_get_clean(); ?>
 
-<?php require('template.php'); ?>
+<?php require "template.php"; ?>

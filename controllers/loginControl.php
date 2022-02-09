@@ -1,12 +1,11 @@
 <?php
 
-// require("../models/loginModel.php");
+require __DIR__ . "/../models/loginModel.php";
 
-function login()
+if ( isset ($_GET["index"]) )
 {
-    require("../views/loginView.php");
+    require __DIR__ . "/../views/loginView.php";
 }
-
 
 
 ?>

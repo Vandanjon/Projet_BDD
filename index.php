@@ -1,28 +1,28 @@
 <?php
 
-require ("controllers/loginControl.php");
+require_once __DIR__ . "/controllers/loginControl.php";
 
 try
 {
-    if ( isset ( $_GET["action"] ) )
+    if ( isset ($_GET["action"]) )
     {
-        if ( $_GET["action"] == "writePouet" )
+        if ($_GET["action"] == "login")
         {
-            echo ("pouet");
+            login();
         }
-        elseif ( $_GET["action"] == "writeBam" )
+        elseif ($_GET["action"] == "writeBam")
         {
             echo ("bam");
         }
-        elseif ( $_GET["action"] == "login" )
+        elseif ($_GET["action"] == "writePouet")
         {
-            login();
+            echo ("pouet");
         }
     }
 
     else
     {
-        // throw new Exception("Aucune action trouvée.");
+        throw new Exception("Aucune action trouvée pour la route.");
         login();
     }
 }
@@ -30,9 +30,8 @@ try
 catch (Exception $e) // s"il y a une erreur, afficher le message
 {
     $errorMessage = $e->getMessage();
-    require("views/errorView.php");
+    require "views/errorView.php";
 }
-
 
 
 ?>
