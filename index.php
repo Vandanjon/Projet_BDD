@@ -1,16 +1,37 @@
-<!DOCTYPE html>
-<html lang="fr">
+<?php
 
-<head>
-    <title>Accueil du site</title>
-    <?php require_once("../includes/header.php"); ?>
+require_once __DIR__ . "/controllers/loginControl.php";
 
-</head>
+try
+{
+    if ( isset ($_GET["action"]) )
+    {
+        if ($_GET["action"] == "login")
+        {
+            login();
+        }
+        elseif ($_GET["action"] == "writeBam")
+        {
+            echo ("bam");
+        }
+        elseif ($_GET["action"] == "writePouet")
+        {
+            echo ("pouet");
+        }
+    }
 
-<body>
-  <main>
-<p>Bonjour</p>
-  </main>
-</body>
+    else
+    {
+        throw new Exception("Aucune action trouvée pour la route.");
+        login();
+    }
+}
 
-</html>
+catch (Exception $e) // s"il y a une erreur, afficher le message
+{
+    $errorMessage = $e->getMessage();
+    require "views/errorView.php";
+}
+
+
+?>
