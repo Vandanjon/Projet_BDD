@@ -1,6 +1,5 @@
 <?php $title = 'Reporting Tool V'; ?>
 
-<?php ob_start(); ?>
 
         <!-- LOGIN -->
         <form action="" method="POST">
@@ -15,7 +14,3 @@
             <input type="submit" id="submit" value="log in">
         </form>
         <!-- END LOGIN -->
-
-<?php $content = ob_get_clean(); ?>
-
-<?php require "template.php"; ?>
