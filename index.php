@@ -29,12 +29,12 @@ if ( $params[0] != "" )
     else
     {
         http_response_code(404);
-        echo "La page recherchée n'existe pas";
+        throw new Exception("La page recherchée n'existe pas");
     }
 }
 else
 {
     require_once ROOT."controllers/Main.php";
     $controller = new Main();
-    $controller->index();
+    $controller->indexi();
 }
