@@ -1,0 +1,1 @@
+<!-- affiche la fiche des users autorisés -->
