@@ -33,7 +33,7 @@ if (isset($_GET['id'])) {
 ?>
 <?php
 $title = "update";
-require_once "functions/header.inc";
+ob_start();
 ?>
 
 <div class="content update">
@@ -58,6 +58,6 @@ require_once "functions/header.inc";
     <?php endif; ?>
 </div>
 
-<?php
-require_once "functions/footer.inc";
-?>
+<?php $content = ob_get_clean(); ?>
+
+<?php require "views/template.php"; ?>

@@ -26,7 +26,7 @@ if (!empty($_POST)) {
 
 <?php
 $title = "create";
-require_once "functions/header.inc";
+ob_start();
 ?>
 
 <div class="content update">
@@ -51,6 +51,6 @@ require_once "functions/header.inc";
     <?php endif; ?>
 </div>
 
-<?php
-require_once "functions/footer.inc";
-?>
+<?php $content = ob_get_clean(); ?>
+
+<?php require "views/template.php"; ?>

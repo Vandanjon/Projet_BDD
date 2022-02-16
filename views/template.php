@@ -17,13 +17,13 @@
 <body>
 
 <?php
- if ($title != "Reporting Tool V")
+ if ($title != "index")
  {
      echo <<<EOT
      <nav class="navtop">
          <div>
              <h1>Website Title</h1>
-             <a href="index.php"><i class="fas fa-home"></i>Home</a>
+             <a href="administration.php"><i class="fas fa-home"></i>Home</a>
              <a href="read.php"><i class="fas fa-address-book"></i>Contacts</a>
          </div>
      </nav>

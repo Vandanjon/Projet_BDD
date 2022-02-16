@@ -35,7 +35,7 @@ if (isset($_GET['id'])) {
 
 <?php
 $title = "delete";
-require_once "functions/header.inc";
+ob_start();
 ?>
 
 <div class="content delete">
@@ -51,6 +51,6 @@ require_once "functions/header.inc";
     <?php endif; ?>
 </div>
 
-<?php
-require_once "functions/footer.inc";
-?>
+<?php $content = ob_get_clean(); ?>
+
+<?php require "views/template.php"; ?>

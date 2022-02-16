@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-$title = "Reporting Tool V";
+$title = "index";
 ob_start();
 ?>
 
