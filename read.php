@@ -1,7 +1,10 @@
 <?php
-include 'functions.php';
+
+session_start();
+require_once "functions/db.php";
+
 // Connect to MySQL database
-$pdo = pdo_connect_mysql();
+$pdo = get_connexion();
 // Get the page via GET request (URL param: page), if non exists default the page to 1
 $page = isset($_GET['page']) && is_numeric($_GET['page']) ? (int)$_GET['page'] : 1;
 // Number of records to show on each page
@@ -19,7 +22,10 @@ $contacts = $stmt->fetchAll(PDO::FETCH_ASSOC);
 $num_contacts = $pdo->query('SELECT COUNT(*) FROM contacts')->fetchColumn();
 ?>
 
-<?=template_header('Read')?>
+<?php
+$title = "read";
+require_once "functions/header.inc";
+?>
 
 <div class="content read">
 	<h2>Read Contacts</h2>
@@ -63,4 +69,6 @@ $num_contacts = $pdo->query('SELECT COUNT(*) FROM contacts')->fetchColumn();
 	</div>
 </div>
 
-<?=template_footer()?>
+<?php
+require_once "functions/footer.inc";
+?>

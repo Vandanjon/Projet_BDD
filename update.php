@@ -1,6 +1,9 @@
 <?php
-include 'functions.php';
-$pdo = pdo_connect_mysql();
+
+session_start();
+require_once "functions/db.php";
+
+$pdo = get_connexion();
 $msg = '';
 // Check if the contact id exists, for example update.php?id=1 will get the contact with the id of 1
 if (isset($_GET['id'])) {
@@ -28,8 +31,10 @@ if (isset($_GET['id'])) {
     exit('No ID specified!');
 }
 ?>
-
-<?=template_header('Read')?>
+<?php
+$title = "update";
+require_once "functions/header.inc";
+?>
 
 <div class="content update">
 	<h2>Update Contact #<?=$contact['id']?></h2>
@@ -53,4 +58,6 @@ if (isset($_GET['id'])) {
     <?php endif; ?>
 </div>
 
-<?=template_footer()?>
+<?php
+require_once "functions/footer.inc";
+?>

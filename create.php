@@ -1,6 +1,9 @@
 <?php
-include 'functions.php';
-$pdo = pdo_connect_mysql();
+
+session_start();
+require_once "functions/db.php";
+
+$pdo = get_connexion();
 $msg = '';
 // Check if POST data is not empty
 if (!empty($_POST)) {
@@ -21,7 +24,10 @@ if (!empty($_POST)) {
 }
 ?>
 
-<?=template_header('Create')?>
+<?php
+$title = "create";
+require_once "functions/header.inc";
+?>
 
 <div class="content update">
 	<h2>Create Contact</h2>
@@ -45,4 +51,6 @@ if (!empty($_POST)) {
     <?php endif; ?>
 </div>
 
-<?=template_footer()?>
+<?php
+require_once "functions/footer.inc";
+?>

@@ -1,6 +1,10 @@
 <?php
-include 'functions.php';
-$pdo = pdo_connect_mysql();
+
+session_start();
+require_once "functions/db.php";
+
+
+$pdo = get_connexion();
 $msg = '';
 // Check that the contact ID exists
 if (isset($_GET['id'])) {
@@ -29,7 +33,10 @@ if (isset($_GET['id'])) {
 }
 ?>
 
-<?=template_header('Delete')?>
+<?php
+$title = "delete";
+require_once "functions/header.inc";
+?>
 
 <div class="content delete">
 	<h2>Delete Contact #<?=$contact['id']?></h2>
@@ -44,4 +51,6 @@ if (isset($_GET['id'])) {
     <?php endif; ?>
 </div>
 
-<?=template_footer()?>
+<?php
+require_once "functions/footer.inc";
+?>
