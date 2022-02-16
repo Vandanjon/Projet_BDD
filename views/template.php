@@ -17,7 +17,7 @@
 <body>
 
 <?php
- if ($title != "index")
+ if ($title != "Reporting Tool V")
  {
      echo <<<EOT
      <nav class="navtop">
