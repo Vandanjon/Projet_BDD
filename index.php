@@ -1,7 +1,15 @@
 <?php
-session_start();
+include 'functions.php';
+// Your PHP code here.
 
-if (!isset($_SESSION['loggedin'])) {
-	header("Location: views/loginView.php");
-	exit;
-}
+// Home Page template below.
+?>
+
+<?=template_header('Home')?>
+
+<div class="content">
+	<h2>Home</h2>
+	<p>Welcome to the home page!</p>
+</div>
+
+<?=template_footer()?>
