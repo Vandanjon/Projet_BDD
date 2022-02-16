@@ -17,18 +17,28 @@
 <body>
 
 <?php
- if ($title != "index")
- {
-     echo <<<EOT
-     <nav class="navtop">
-         <div>
-             <h1>Website Title</h1>
-             <a href="administration.php"><i class="fas fa-home"></i>Home</a>
-             <a href="read.php"><i class="fas fa-address-book"></i>Contacts</a>
-         </div>
-     </nav>
-     EOT;
- }
+if ($_SESSION)
+{
+    $name = $_SESSION["name"];
+}
+
+if ($title != "index")
+{
+    echo <<<EOT
+    <nav class="navtop">
+        <div>
+            <h1>Website Title - $title</h1>
+            <a href="administration.php"><i class="fas fa-home"></i>Admin</a>
+            <a href="create.php"><i class="fas fa-home"></i>Create</a>
+            <a href="profile.php"><i class="fas fa-address-book"></i>Profile</a>
+        </div>
+
+        <div>
+        <p>Hi <a href="profile.php">$name</a></p>
+        <a href="logout.php"><i class="fas fa-sign-out-alt"></i>Logout</a>
+    </nav>
+    EOT;
+}
 ?>
 
 <?= $content ?>

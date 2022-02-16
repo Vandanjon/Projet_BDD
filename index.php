@@ -1,5 +1,6 @@
 <?php
 session_start();
+require_once "define.php";
 
 $title = "index";
 ob_start();
@@ -25,4 +26,4 @@ ob_start();
 <?php
 $content = ob_get_clean();
 
-require_once "views/template.php";
+require_once ROOT . "views/template.php";

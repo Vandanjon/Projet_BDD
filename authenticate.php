@@ -1,7 +1,8 @@
 <?php
 session_start();
+require_once ROOT . "/define.php";
 
-require_once "functions/db.php";
+require_once ROOT . "functions/db.php";
 
 
 $pdo = get_connexion();

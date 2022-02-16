@@ -1,12 +1,13 @@
 <?php
-
+require_once ROOT . '/define.php';
+// echo ROOT;
 function get_connexion()
 {
 
-    $db_host = "localhost";
-    $db_name = "ffebefvd_reporting";
-    $db_user = "root";
-    $db_pass = "";
+    $db_host = "DB_SERVER";
+    $db_name = "DB_NAME";
+    $db_user = "DB_USER";
+    $db_pass = "DB_PASSWORD";
     $pdo = NULL;
     
     try
@@ -25,9 +26,3 @@ function get_connexion()
     return $pdo;
 
 }
-
-
-$db_host = "localhost";
-$db_name = "ffebefvd_reporting";
-$db_user = "root";
-$db_pass = "";
