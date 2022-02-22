@@ -1,40 +1,31 @@
 <?php
+session_start();
+
+require_once "setup.php";
 
 
-define("ROOT", str_replace("index.php","",$_SERVER["SCRIPT_FILENAME"]));
+$title = "index";
+ob_start();
+?>
 
-require_once ROOT."app/Controller.php";
-require_once ROOT."app/Model.php";
+<main id="main_index">
+    <h1>Login</h1>
+    <form action="authenticate.php" method="post">
+        <label for="username">
+            <i class="fas fa-user"></i>
+        </label>
+        <input type="text" name="username" placeholder="Username" id="username" required>
+        
+        <label for="password">
+            <i class="fas fa-lock"></i>
+        </label>
+        <input type="password" name="password" placeholder="Password" id="password" required>
+        
+        <input type="submit" value="Login">
+    </form>
+</main>
 
-###############################################################################
-//lecture des URLS par la route
+<?php
+$content = ob_get_clean();
 
-$params = explode("/", $_GET["p"]);
-
-if ( $params[0] != "" )
-{
-    $controller = ucfirst($params[0]);
-    $action = isset($params[1]) ? $params[1] : "index";
-
-    require_once ROOT."controllers/".$controller.".php";
-
-    $controller = new $controller();
-
-    if ( method_exists($controller, $action) )
-    {
-        unset($params[0]);
-        unset($params[1]);
-        call_user_func_array([$controller,$action], $params);
-    }
-    else
-    {
-        http_response_code(404);
-        throw new Exception("La page recherchée n'existe pas");
-    }
-}
-else
-{
-    require_once ROOT."controllers/Main.php";
-    $controller = new Main();
-    $controller->indexi();
-}
+require_once "views/template.php";
