@@ -1,13 +1,14 @@
 <?php
-require_once ROOT . '/define.php';
-// echo ROOT;
+
+require_once "./setup.php";
+
 function get_connexion()
 {
 
-    $db_host = "DB_SERVER";
-    $db_name = "DB_NAME";
-    $db_user = "DB_USER";
-    $db_pass = "DB_PASSWORD";
+    $db_host = DB_SERVER;
+    $db_name = DB_NAME;
+    $db_user = DB_USER;
+    $db_pass = DB_PASSWORD;
     $pdo = NULL;
     
     try
@@ -20,7 +21,7 @@ function get_connexion()
     {
         echo 'Database connection failed<br>';
         print_r($exception);
-        die();
+        exit();
     }
     
     return $pdo;

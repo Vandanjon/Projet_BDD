@@ -1,52 +1,59 @@
 <?php
 
 session_start();
-require_once "functions/db.php";
+require_once "models/db.php";
 
 
 $pdo = get_connexion();
-$msg = '';
-// Check that the contact ID exists
-if (isset($_GET['id'])) {
+$msg = "";
+
+if ( isset($_GET['id']) )
+{
     // Select the record that is going to be deleted
     $stmt = $pdo->prepare('SELECT * FROM contacts WHERE id = ?');
     $stmt->execute([$_GET['id']]);
     $contact = $stmt->fetch(PDO::FETCH_ASSOC);
-    if (!$contact) {
-        exit('Contact doesn\'t exist with that ID!');
+    if ( !$contact )
+    {
+        exit("Contact doesn't exist with that ID!");
     }
-    // Make sure the user confirms beore deletion
-    if (isset($_GET['confirm'])) {
-        if ($_GET['confirm'] == 'yes') {
-            // User clicked the "Yes" button, delete record
-            $stmt = $pdo->prepare('DELETE FROM contacts WHERE id = ?');
-            $stmt->execute([$_GET['id']]);
-            $msg = 'You have deleted the contact!';
-        } else {
-            // User clicked the "No" button, redirect them back to the read page
-            header('Location: read.php');
+
+    // Make sure the user confirms before deletion
+    if ( isset($_GET["confirm"]) )
+    {
+        if ($_GET["confirm"] == "yes")
+        {
+            $stmt = $pdo->prepare("DELETE FROM contacts WHERE id = ?");
+            $stmt->execute([$_GET["id"]]);
+            $msg = "You have deleted the contact!";
+        }
+        
+        else
+        {
+            header("Location: administration.php");
             exit;
         }
     }
-} else {
-    exit('No ID specified!');
 }
-?>
 
-<?php
+else
+{
+    exit("No ID specified!");
+}
+
 $title = "delete";
 ob_start();
 ?>
 
 <div class="content delete">
-	<h2>Delete Contact #<?=$contact['id']?></h2>
+	<h2>Delete Contact #<?=$contact["id"]?></h2>
     <?php if ($msg): ?>
     <p><?=$msg?></p>
     <?php else: ?>
-	<p>Are you sure you want to delete contact #<?=$contact['id']?>?</p>
+	<p>Are you sure you want to delete contact #<?=$contact["id"]?>?</p>
     <div class="yesno">
-        <a href="delete.php?id=<?=$contact['id']?>&confirm=yes">Yes</a>
-        <a href="delete.php?id=<?=$contact['id']?>&confirm=no">No</a>
+        <a href="delete.php?id=<?=$contact["id"]?>&confirm=yes">Yes</a>
+        <a href="delete.php?id=<?=$contact["id"]?>&confirm=no">No</a>
     </div>
     <?php endif; ?>
 </div>

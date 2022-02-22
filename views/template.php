@@ -19,7 +19,7 @@
 <?php
 if ($_SESSION)
 {
-    $name = $_SESSION["name"];
+    $name = $_SESSION["userName"];
 }
 
 if ($title != "index")
