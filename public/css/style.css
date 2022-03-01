@@ -4,32 +4,35 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
 
-#login_view {
+#main_index {
   background-color: #435165;
   width: 100vw;
   height: 100vh;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  padding-bottom: 10vh;
 }
-
-#login_wrap {
-  width: 400px;
-  background-color: white;
+#main_index section {
+  width: 40vw;
+  background-color: #5b6574;
   box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.3);
+  margin-left: 5vw;
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
-#login_wrap h1 {
+#main_index section h1 {
   text-align: center;
-  color: #5b6574;
+  color: white;
   padding: 20px 0 30px 0;
-  border-bottom: 1px solid #dee0e4;
+}
+#main_index #login_bg {
+  width: 50vw;
+  height: 100vh;
+  background: url("../img/secure_bg.jpg") no-repeat 80%/cover;
 }
 
-#login_wrap form {
+#main_index form {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -37,30 +40,30 @@ body {
   margin: auto;
   padding: 20px 0 30px 0;
 }
-#login_wrap form fieldset {
+#main_index form fieldset {
   border: 0;
   width: 100%;
   display: flex;
   justify-content: center;
 }
-#login_wrap form fieldset label {
+#main_index form fieldset label {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 50px;
+  width: 20%;
   height: 50px;
   background-color: #3274d6;
   color: white;
 }
-#login_wrap form fieldset input[type=password],
-#login_wrap form fieldset input[type=text] {
-  width: 300px;
+#main_index form fieldset input[type=password],
+#main_index form fieldset input[type=text] {
+  width: 80%;
+  margin: auto;
   height: 46px;
-  border: 1px solid #dee0e4;
+  border: 1px solid beige;
   text-indent: 10px;
 }
-
-input[type=submit] {
+#main_index input[type=submit] {
   width: 100%;
   padding: 15px;
   background-color: #3274d6;
@@ -71,8 +74,7 @@ input[type=submit] {
   color: white;
   transition: background-color 0.3s;
 }
-
-input[type=submit]:hover {
+#main_index input[type=submit]:hover {
   background-color: #2868c7;
   transition: background-color 0.3s;
 }/*# sourceMappingURL=style.css.map */

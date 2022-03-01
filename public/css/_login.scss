@@ -1,77 +1,88 @@
-#login_view {
+#main_index {
     background-color: $grey;
     width: 100vw;
     height: 100vh;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    padding-bottom: 10vh;
-}
-
-#login_wrap {
-    width: 400px;
-    background-color: white;
-    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.3);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-
-    h1 {
-        text-align: center;
-        color: $greyLight;
-        padding: 20px 0 30px 0;
-        border-bottom: 1px solid $cream;
+    // padding-bottom: 10vh;
+    
+    section {
+        width: 40vw;
+        background-color: $greyLight;
+        box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.3);
+        margin-left: 5vw;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    
+        h1 {
+            text-align: center;
+            color: white;
+            padding: 20px 0 30px 0;
+            // border-bottom: 1px solid white;
+        }
+    }
+    
+    #login_bg {
+        width: 50vw;
+        height: 100vh;
+        background: url("../img/secure_bg.jpg") no-repeat 80%/cover;
     }
 }
 
-#login_wrap form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 80%;
-    margin: auto;
-    padding: 20px 0 30px 0;
+#main_index {
 
-    fieldset {
-        border: 0;
-        width: 100%;
+    form {
         display: flex;
-        justify-content: center;
-
-        label {
+        flex-direction: column;
+        align-items: center;
+        width: 80%;
+        margin: auto;
+        padding: 20px 0 30px 0;
+    
+        fieldset {
+            border: 0;
+            width: 100%;
             display: flex;
             justify-content: center;
-            align-items: center;
-            width: 50px;
-            height: 50px;
-            background-color: $blueLight;
-            color: white;
-        }
-
-        input[type="password"],
-        input[type="text"] {
-            width: 300px;
-            height: 46px;
-            border: 1px solid $cream;
-            text-indent: 10px;
+    
+            label {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 20%;
+                height: 50px;
+                background-color: $blueLight;
+                color: white;
+            }
+    
+            input[type="password"],
+            input[type="text"] {
+                width: 80%;
+                margin: auto;
+                height: 46px;
+                border: 1px solid $cream;
+                text-indent: 10px;
+            }
         }
     }
-}
-
-input[type="submit"] {
-    width: 100%;
-    padding: 15px;
-    // margin-top: 20px;
-    background-color: $blueLight;
-    border: 0;
-    cursor: pointer;
-    text-transform: uppercase;
-    font-weight: bold;
-    color: white;
-    transition: background-color 0.3s;
-}
-
-input[type="submit"]:hover {
-    background-color: $blue;
-    transition: background-color 0.3s;
+    
+    input[type="submit"] {
+        width: 100%;
+        padding: 15px;
+        // margin-top: 20px;
+        background-color: $blueLight;
+        border: 0;
+        cursor: pointer;
+        text-transform: uppercase;
+        font-weight: bold;
+        color: white;
+        transition: background-color 0.3s;
+    }
+    
+    input[type="submit"]:hover {
+        background-color: $blue;
+        transition: background-color 0.3s;
+    }
 }

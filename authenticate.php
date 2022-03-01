@@ -20,7 +20,7 @@ if ($stmt = $pdo->prepare( "SELECT * FROM accounts WHERE username = :username LI
 	$stmt->bindParam( ":username", $_POST["username"] );
 	$stmt->execute();
     $row = $stmt->fetch(PDO::FETCH_ASSOC);
-    
+
     if ( is_array($row) )
     {
         if ( password_verify($_POST["password"], $row["password"]) )
@@ -31,6 +31,7 @@ if ($stmt = $pdo->prepare( "SELECT * FROM accounts WHERE username = :username LI
             $_SESSION["userName"] = $row["username"];
             $_SESSION["userPassword"] = $row["password"];
             $_SESSION["userEmail"] = $row["email"];
+            $_SESSION["userRole"] = $row["role"];
             
             header("Location: administration.php");
         }
